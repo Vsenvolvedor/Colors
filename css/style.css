@@ -1,0 +1,230 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%
+}
+
+body
+{
+    padding: 9rem 3rem;
+    background-color: rgb(233, 233, 233);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.game 
+{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    width: fit-content;
+}
+
+.color
+{
+    display: block;
+    border: 4px solid black;
+    background-color: grey;
+    width: 200px;
+    height: 150px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
+    cursor: pointer;
+    grid-row: 1;
+}
+
+.color:hover 
+{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.226);
+}
+
+.btns
+{
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.btns p 
+{
+    display: none;
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: .5rem;
+}
+
+.btns p.active
+{
+    display: block;
+    animation: .2s infinite pisca;
+}
+
+@keyframes pisca 
+{
+    from
+    {
+        font-weight: 400;
+    }
+    to
+    {
+        font-weight: bold;
+    }
+}
+
+
+button
+{
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+button:hover
+{
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.226);
+}
+
+.resul
+{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgb(228, 224, 224);
+    padding: 1rem;
+    border: 4px solid black;
+    border-radius: 6px;
+    
+}
+
+.resul h1 
+{
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.resul li 
+{
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+
+.resul li span 
+{
+    font-weight: bold;
+}
+
+.resul p 
+{
+    color: rgb(252, 62, 62);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+@media (max-width:850px)
+{
+    .game
+    {
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        margin: 3rem 0;
+    }
+
+    .color
+    {
+        grid-row: auto;
+    }
+}
+
+
+@media (max-width:450px)
+{
+
+    body 
+    {
+        padding: 6rem 0;
+    }
+
+    .color
+    {
+        width: 150px;
+        height: 100px;
+    }
+
+    button 
+    {
+        padding: .5rem 1rem;
+    }
+}
+
+@media (max-width:350px)
+{
+    .game
+    {
+       margin-left: auto;
+       margin-right: auto;
+    }
+
+    .color
+    {
+        width: 100px;
+        height: 80px;
+        
+    }
+}
+
+/* JS */
+
+#red
+{
+    background-color: rgba(235, 48, 48, 0.5);
+    --rgb: 235, 48, 48;
+}
+
+#green
+{
+    background-color: rgba(54, 235, 48,  0.5);
+    --rgb: 54, 235, 48;
+}
+
+#blue
+{
+    background-color: rgba(51, 48, 235,  0.5);
+    --rgb:51, 48, 235;
+}
+
+#yellow
+{
+    background-color: rgba(235, 232, 48,  0.5);
+    --rgb:235, 232, 48;
+}
+
+#red.active,
+#green.active,
+#blue.active,
+#yellow.active
+{
+    background-color: rgba(var(--rgb),1);
+}
